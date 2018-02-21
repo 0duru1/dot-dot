@@ -4,11 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 		<title> 날적이 diary 日記 にっき</title>
-		<style>
-			.ko, .en, .ch, .jp {
-				display:none;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="./language.css">
 	</head>
 	<body>
 		<div>
@@ -16,17 +12,16 @@
 			<input value="영어끔" type="button" onclick="translateHandler(this)">
 		</div>
 		<div>
-			<h1> 
+			<h1 class="word_ko sentence"> 
 				<span class="word_ko">날적이</span> 
-				<span class="en">diary</span> 
-					<span class="special">-</span> 
+				<span class="special">-</span> 
  				<span class="word_ko">무누레</span> 
-				<span class="en">MUNULE</span> 
 				<span class="word_ko">여행</span>
-				<span class="en">travels</span>
-								
-				<span class="ch"> 日記 - MUNULE 旅行记 </span>
-				<span class="jp"> にっき - ムヌレ どうちゅうき</span>
+			</h1>
+			<h1 class="en sentence">
+
+				<span class="en">diary</span> 
+				<span class="en">MUNULE</span> 
 			</h1>
 			<p class="word_ko">하루 하루 세상이라는 바다를 향해하다가 표류하다가 드는 생각들...</p>
 			<ul>
@@ -36,16 +31,17 @@
 			</ul>
 		</div>
 		<section>
-			<h3> 궁금증? 물음? </h3>
-			<p> 궁금하다는 것은 무엇일까?  어떻게 동작하는 것일까? 어떤 음가나 텍스트가 다가올때 그 의미는 무엇인지... 내 안에서 깊은 요동을 치는 것 같다. 나는 참지 못하고 그 요동 속으로 향하게 만드는 것...</p>
+			<h3 class="word_ko"> 궁금증? 물음? </h3>
+			<p class="word_ko"> 궁금하다는 것은 무엇일까?  어떻게 동작하는 것일까? 어떤 음가나 텍스트가 다가올때 그 의미는 무엇인지... 내 안에서 깊은 요동을 치는 것 같다. 나는 참지 못하고 그 요동 속으로 향하게 만드는 것...</p>
 		
 		</section>
+		<hr />
 		<div class="footer">
 			<ul>
-				<li><a href="./words.html"> 단어들 </a></li>
-				<li><a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fwww.duru.ga%2F" target="_blank"> html 문법 체크 </a></li>
-				<li><a href="https://testmysite.io/5a8cfdd4efbe5d671c123035/www.duru.ga"> 웹사이트 속도 체크 </a></li>
-				<li><a href="https://www.netlify.com/"> 호스팅 되고 있는 사이트 </a></li>
+				<li><a href="./words.html"><span class="word_ko">단어들</span></a></li>
+				<li><a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fwww.duru.ga%2F" target="_blank"><span class="word_ko">html 문법 체크</span></a></li>
+				<li><a href="https://testmysite.io/5a8cfdd4efbe5d671c123035/www.duru.ga"><span class="word_ko">보안과 속도 체크</span></a></li>
+				<li><a href="https://www.netlify.com/"><span class="word_ko">서버 임대 서비스</span></a></li>
 			</ul>
 		</div>
 		<script src="./common.js"></script>
