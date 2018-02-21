@@ -19,7 +19,7 @@
 			<h1> 
 				<span class="word_ko">날적이</span> 
 				<span class="en">diary</span> 
-					- 
+					<span class="special">-</span> 
  				<span class="word_ko">무누레</span> 
 				<span class="en">MUNULE</span> 
 				<span class="word_ko">여행</span>
@@ -28,11 +28,11 @@
 				<span class="ch"> 日記 - MUNULE 旅行记 </span>
 				<span class="jp"> にっき - ムヌレ どうちゅうき</span>
 			</h1>
-			<p>하루 하루 세상이라는 바다를 향해하다가 표류하다가 드는 생각들</p>
+			<p class="word_ko">하루 하루 세상이라는 바다를 향해하다가 표류하다가 드는 생각들...</p>
 			<ul>
                             
-				<li><span class="date">2018.02.21</span> 아침에 일어나서 명상을 하면 세상에 많은 걸 느끼게 해주는 것 같다.</li>
-				<li><a href="./soy.html">너굴이에 대해</a></li>
+				<li><span class="date">2018.02.21</span> <span class="word_ko">아침에 일어나서 명상을 하면 세상에 많은 걸 느끼게 해주는 것 같다.</span></li>
+				<li><a href="./soy.html"><span class="word_ko">너굴이에 대해</span></a></li>
 			</ul>
 		</div>
 		<section>
@@ -48,43 +48,6 @@
 				<li><a href="https://www.netlify.com/"> 호스팅 되고 있는 사이트 </a></li>
 			</ul>
 		</div>
-
-		<script>
-			function translateHandler(self) {
-				var target = document.querySelector('body');
-				if (self.value ==="한국")
-					switchLanguage(self, '한국', '한국어끔','word_ko', 'ko');
-				else if (self.value === "한국어끔")
-					switchLanguage(self, '한국', '한국어끔','word_ko', 'ko');
-				else if (self.value === "영어")
-					switchLanguage(self, '영어', '영어끔','word_en', 'en');
-				else if (self.value === "영어끔")
-					switchLanguage(self, '영어', '영어끔','word_en', 'en');
-			}
-
-			function switchLanguage(self, selText, setText, selClass, setClass)
-			{
-				if(self.value === selText) {
-					self.value = setText;
-					setTagClass(selClass, setClass);
-				} else {
-					self.value = selText;
-					setTagClass(setClass, selClass);
-				}	
-			}
-
-			function setTagClass(selClass, setClass)
-			{
-					var words = document.getElementsByClassName(selClass);
-					var cnt = words.length;
-					for(var i = 0; i < cnt; i++){
-						words[i].classList.add(setClass);
-					}
-					words = document.getElementsByClassName(setClass);
-					for(var i = 0; i <cnt; i++)
-						words[i].classList.remove(selClass);
-			}
-		</script>
-
-	</body>
+		<script src="./common.js"></script>
+		</body>
 </html>
