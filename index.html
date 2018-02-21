@@ -4,14 +4,30 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 		<title> 날적이 diary 日記 にっき</title>
-
+		<style>
+			.ko, .en, .ch, .jp {
+				display:none;
+			}
+		</style>
 	</head>
 	<body>
 		<div>
-			<h1> <span class="word_ko">날적이</span> - <span class="word_ko">무누레 여행기</span></h1>
-			<h1 class="en"> diary - MUNULE  travels</h1>
-			<h1 class="ch"> 日記 - MUNULE 旅行记 </h1>
-			<h1 class="jp"> にっき - ムヌレ どうちゅうき</h1>
+			<input value="한국" type="button" onclick="translateHandler(this)">
+			<input value="영어끔" type="button" onclick="translateHandler(this)">
+		</div>
+		<div>
+			<h1> 
+				<span class="word_ko">날적이</span> 
+				<span class="en">diary</span> 
+					- 
+ 				<span class="word_ko">무누레</span> 
+				<span class="en">MUNULE</span> 
+				<span class="word_ko">여행</span>
+				<span class="en">travels</span>
+								
+				<span class="ch"> 日記 - MUNULE 旅行记 </span>
+				<span class="jp"> にっき - ムヌレ どうちゅうき</span>
+			</h1>
 			<p>하루 하루 세상이라는 바다를 향해하다가 표류하다가 드는 생각들</p>
 			<ul>
                             
@@ -33,6 +49,42 @@
 			</ul>
 		</div>
 
+		<script>
+			function translateHandler(self) {
+				var target = document.querySelector('body');
+				if (self.value ==="한국")
+					switchLanguage(self, '한국', '한국어끔','word_ko', 'ko');
+				else if (self.value === "한국어끔")
+					switchLanguage(self, '한국', '한국어끔','word_ko', 'ko');
+				else if (self.value === "영어")
+					switchLanguage(self, '영어', '영어끔','word_en', 'en');
+				else if (self.value === "영어끔")
+					switchLanguage(self, '영어', '영어끔','word_en', 'en');
+			}
+
+			function switchLanguage(self, selText, setText, selClass, setClass)
+			{
+				if(self.value === selText) {
+					self.value = setText;
+					setTagClass(selClass, setClass);
+				} else {
+					self.value = selText;
+					setTagClass(setClass, selClass);
+				}	
+			}
+
+			function setTagClass(selClass, setClass)
+			{
+					var words = document.getElementsByClassName(selClass);
+					var cnt = words.length;
+					for(var i = 0; i < cnt; i++){
+						words[i].classList.add(setClass);
+					}
+					words = document.getElementsByClassName(setClass);
+					for(var i = 0; i <cnt; i++)
+						words[i].classList.remove(selClass);
+			}
+		</script>
 
 	</body>
 </html>
